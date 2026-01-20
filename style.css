@@ -1,37 +1,262 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Page background */
+html {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 40px;
+  min-height: 100vh;
+}
+
+/* Resume card */
 body {
-    background-color: lightblue;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 40px;
-    line-height: 1.6;
-    color: #222;
+  max-width: 1200px;
+  margin: auto;
+  background: #ffffff;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in-out;
+  color: #333;
 }
 
-h1 {
-    font-size: 36px;
-    margin-bottom: 0;
+/* Top section with header on the right */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 45px 55px;
+  gap: 40px;
 }
 
+/* Left side of top section - can add contact info or summary here */
+.top-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+/* Header - right side */
+.header {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  gap: 10px;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.header h1 {
+  color: black;
+  font-size: 3rem;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.header p {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Main content wrapper - creates the two-column layout */
+.content-wrapper {
+  display: flex;
+  gap: 50px;
+  padding: 50px 55px;
+  background: linear-gradient(to bottom, #fafafa, #ffffff);
+}
+
+/* Sidebar - left column */
+.sidebar {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.sidebar section {
+  background: #f8f9ff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+}
+
+/* Main content - right column */
+.main-content {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Section headers */
 h2 {
-    margin-top: 30px;
-    border-bottom: 2px solid #444;
-    padding-bottom: 4px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.7rem;
+  color: #764ba2;
+  padding-left: 15px;
+  border-left: 6px solid #667eea;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.introduction {
-    text-align: center;
-}
-
+/* Horizontal rules */
 hr {
-    border: none;
-    border-top: 1px solid #aaa;
-    margin: 20px 0;
+  border: none;
+  height: 3px;
+  background: linear-gradient(to right, #667eea, #764ba2, #667eea);
+  margin: 10px 0 25px;
+  border-radius: 2px;
+  opacity: 0.8;
 }
 
-ul {
-    margin-left: 20px;
+/* Paragraphs */
+p {
+  margin: 8px 0 16px;
+  line-height: 1.7;
+  color: #555;
+  font-size: 0.95rem;
 }
 
+/* Strong text (school & job titles) */
 strong {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #2d3748;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* Dates styling */
+br + strong,
+strong + br {
+  margin-top: 5px;
+  color: #667eea;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  margin: 15px 0 30px;
+  padding-left: 5px;
+}
+
+ul li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Custom bullets with gradient */
+ul li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+}
+
+/* Work experience spacing */
+strong + ul {
+  margin-top: 12px;
+}
+
+/* Hover effects */
+ul li:hover {
+  color: #667eea;
+  transition: color 0.2s ease;
+  transform: translateX(3px);
+}
+
+strong:hover {
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skill tags styling */
+.sidebar ul li {
+  background: white;
+  padding: 10px 15px;
+  padding-left: 35px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background: linear-gradient(135deg, #667eea15, #764ba215);
+  border-color: #667eea;
+  transform: translateX(5px);
+}
+
+/* Responsive - stacks on smaller screens */
+@media (max-width: 968px) {
+  .top-section {
+    flex-direction: column;
+  }
+  
+  .header {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    flex: 1;
+  }
+  
+  body {
+    margin: 20px;
+  }
+  
+  html {
+    padding: 20px;
+  }
 }
